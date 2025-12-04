@@ -41,3 +41,7 @@ where date = '2020-06-20'
 select *
 from degrees
 where level = 'magistrale'
+
+# Da quanti dipartimenti è composta l'università? (12)
+select *
+from departments
