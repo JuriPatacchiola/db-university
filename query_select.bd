@@ -43,10 +43,10 @@ from degrees
 where level = 'magistrale'
 
 # Da quanti dipartimenti è composta l'università? (12)
-select *
-from departments
+SELECT COUNT(*) AS total_departments
+FROM departments;
 
 # Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
-select *
-from teachers
-where phone is NULL
+SELECT COUNT(*) AS teachers_without_phone
+FROM teachers
+WHERE phone IS NULL;
