@@ -74,3 +74,10 @@ SELECT exam_id,
 FROM exam_student
 GROUP BY exam_id
 ORDER BY exam_id;
+
+# Contare quanti corsi di laurea ci sono per ogni dipartimento
+SELECT degree_id,
+       COUNT(*) AS numero_corsi
+FROM courses
+GROUP BY degree_id
+ORDER BY degree_id;
