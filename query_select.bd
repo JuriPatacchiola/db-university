@@ -58,3 +58,12 @@ SELECT YEAR(enrolment_date) AS anno,
 FROM students
 GROUP BY YEAR(enrolment_date)
 ORDER BY anno;
+
+
+# Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+
+SELECT office_address,
+       COUNT(*) AS numero_insegnanti
+FROM teachers
+GROUP BY office_address
+HAVING COUNT(*) > 1;
