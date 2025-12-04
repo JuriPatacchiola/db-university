@@ -34,3 +34,10 @@ select *
 from exams 
 where date = '2020-06-20'
       and time(hour) > '14:00:00'
+
+
+# Selezionare tutti i corsi di laurea magistrale (38)
+
+select *
+from degrees
+where level = 'magistrale'
