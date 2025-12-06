@@ -73,3 +73,21 @@ JOIN `departments`
 ORDER BY 
     `students`.`surname`,
     `students`.`name`;
+
+
+# elezionare tutti i corsi di laurea con i relativi corsi e insegnanti
+
+SELECT
+    `degrees`.`name` AS 'Nome Corso di Laurea',
+    `courses`.`name` AS 'Nome Corso',
+    CONCAT(`teachers`.`name`, ' ', `teachers`.`surname`) AS 'Nome Insegnante'
+FROM
+    `degrees`
+INNER JOIN
+    `courses` ON `degrees`.`id` = `courses`.`degree_id`
+INNER JOIN
+    `course_teacher` ON `courses`.`id` = `course_teacher`.`course_id`
+INNER JOIN
+    `teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id`
+ORDER BY
+    `degrees`.`name`, `courses`.`name`, `teachers`.`surname`;
